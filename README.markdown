@@ -4,7 +4,11 @@ Velvet is a personal reading management application designed to help readers org
 
 The project was developed as a complete web application, with authentication, user-based data isolation, PostgreSQL persistence, book management, reading status organization, ratings, reviews, and a responsive interface.
 
-Velvet’s purpose is to provide a simple and organized space where readers can manage their personal library, track books they want to read, books currently being read, and books they have already finished.
+Velvet's purpose is to provide a simple and organized space where readers can manage their personal library, track books they want to read, books currently being read, and books they have already finished.
+
+## Try Velvet
+
+Want to organize your own reading library? [Access the web version](YOUR_VERCEL_URL) and create your account to start tracking your books.
 
 ## Main Links
 
@@ -156,11 +160,6 @@ Screenshots of the application:
 
 ### Landing Page
 
-
-
-
-
-
 ## Repository Structure
 
 The repository contains the complete Velvet application source code.
@@ -194,20 +193,15 @@ Sensitive environment variables and local configuration are not included in the 
 
 ## Technical Decisions
 
-Some important technical decisions in Velvet include:
+Next.js ended up being the natural choice to build the whole application on, since it let me handle both the frontend and the API routes without having to maintain two separate projects. TypeScript was non-negotiable for me here — with a data model that has users, books, genres, and reading statuses all connected, catching type mistakes before runtime saved a lot of debugging time.
 
-- using Next.js as the main application framework;
-- using TypeScript for type safety;
-- using PostgreSQL for relational data persistence;
-- using Prisma as the database ORM;
-- using Better Auth for authentication and session management;
-- associating books with authenticated users;
-- protecting book operations through the authenticated user's ID;
-- using relational models for books and genres;
-- keeping optional book information optional in the user interface;
-- separating completed-book details from books that are still being read or waiting to be read;
-- building a responsive interface for desktop and mobile;
-- deploying the application through Vercel.
+For the database, I went with PostgreSQL paired with Prisma. Prisma's schema made it a lot easier to reason about the relationships between users and their books, and migrations became straightforward instead of something I had to fight with.
+
+Authentication was handled through Better Auth, and every book operation — create, read, update, delete — is tied to the authenticated user's ID. This was the core of making Velvet actually feel like a multi-user app instead of a shared list that anyone could see or edit.
+
+On the interface side, I made a conscious call to keep most book fields optional. Not everyone wants to fill in a rating or write a review right away, so the form only asks for more detail once a book is marked as "Read." I also split the completed-book experience into its own details page, since finished books carry more information (rating, review, completion date) than books still in progress.
+
+Finally, the whole thing was built to be responsive from the start and deployed on Vercel, mostly because it fit naturally with the Next.js setup and made shipping updates simple.
 
 ## User Accounts and Data Isolation
 
@@ -230,6 +224,7 @@ Another user's account
  └─ Personal library
      ├─ Book D
      └─ Book E
+```
 
 ## Responsive Interface
 
@@ -253,41 +248,6 @@ During development, some of the main challenges were:
 - keeping optional information truly optional;
 - building a responsive interface;
 - maintaining consistency across the application's different screens.
-
-## Local Execution
-
-To run Velvet locally, clone the repository and install the dependencies:
-
-```bash
-git clone https://github.com/gamaalice/Velvet.git
-cd Velvet
-pnpm install
-```
-
-Create a `.env` file with the required environment variables:
-
-```env
-DATABASE_URL="your-postgresql-connection-string"
-BETTER_AUTH_URL="http://localhost:3000"
-```
-
-Run the database migrations:
-
-```bash
-pnpm prisma migrate dev
-```
-
-Start the development server:
-
-```bash
-pnpm dev
-```
-
-The application will be available at:
-
-```text
-http://localhost:3000
-```
 
 ## Contact
 
