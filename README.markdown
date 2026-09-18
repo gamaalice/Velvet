@@ -158,8 +158,6 @@ This allows users to record as much or as little information as they want.
 
 Screenshots of the application:
 
-### Landing Page
-
 ## Repository Structure
 
 The repository contains the complete Velvet application source code.
