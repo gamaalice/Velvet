@@ -41,7 +41,14 @@ export default function SignUpPage() {
     })
 
     if (result.error) {
-      setError('Não foi possível criar sua conta. Tente novamente.')
+      console.error('ERRO COMPLETO DO SIGN UP:', result.error)
+
+      setError(
+        result.error.message ||
+          result.error.statusText ||
+          `Erro ao criar conta (${result.error.status || 'desconhecido'})`
+      )
+
       setLoading(false)
       return
     }
@@ -229,6 +236,7 @@ export default function SignUpPage() {
 
             <div className="login-note">
               <ShieldAlert size={15} />
+
               <span>
                 Salve seu login e senha em um lugar seguro —
                 você vai precisar deles para entrar depois.
@@ -247,7 +255,9 @@ export default function SignUpPage() {
               disabled={loading}
             >
               <span>
-                {loading ? 'criando conta...' : 'criar conta'}
+                {loading
+                  ? 'criando conta...'
+                  : 'criar conta'}
               </span>
 
               {!loading && <ArrowRight size={18} />}
@@ -262,6 +272,7 @@ export default function SignUpPage() {
 
           <p className="login-register">
             Já tem uma conta?{' '}
+
             <a href="/sign-in">
               entrar na minha conta
             </a>
