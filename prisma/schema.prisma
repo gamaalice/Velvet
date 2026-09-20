@@ -69,16 +69,16 @@ model Book {
   finishedAt DateTime?
   createdAt  DateTime   @default(now())
   updatedAt  DateTime
-  Genre      Genre[]
+  genres     Genre[]
 
   @@index([userId])
   @@index([userId, status])
 }
 
 model Genre {
-  id   String @id
-  name String @unique
-  Book Book[]
+  id    String @id
+  name  String @unique
+  books Book[]
 }
 
 enum BookStatus {
