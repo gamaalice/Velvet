@@ -56,3 +56,33 @@ model verification {
   createdAt  DateTime @default(now()) @db.Timestamp(6)
   updatedAt  DateTime @default(now()) @db.Timestamp(6)
 }
+
+model Book {
+  id         String     @id
+  userId     String
+  title      String
+  author     String
+  status     BookStatus @default(QUERO_LER)
+  year       Int?
+  rating     Int?
+  review     String?
+  finishedAt DateTime?
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime
+  Genre      Genre[]
+
+  @@index([userId])
+  @@index([userId, status])
+}
+
+model Genre {
+  id   String @id
+  name String @unique
+  Book Book[]
+}
+
+enum BookStatus {
+  LIDO
+  LENDO
+  QUERO_LER
+}

@@ -54,7 +54,9 @@ export const ModelName = {
   account: 'account',
   session: 'session',
   user: 'user',
-  verification: 'verification'
+  verification: 'verification',
+  Book: 'Book',
+  Genre: 'Genre'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -129,6 +131,31 @@ export const VerificationScalarFieldEnum = {
 } as const
 
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
+
+
+export const BookScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  title: 'title',
+  author: 'author',
+  status: 'status',
+  year: 'year',
+  rating: 'rating',
+  review: 'review',
+  finishedAt: 'finishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookScalarFieldEnum = (typeof BookScalarFieldEnum)[keyof typeof BookScalarFieldEnum]
+
+
+export const GenreScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+} as const
+
+export type GenreScalarFieldEnum = (typeof GenreScalarFieldEnum)[keyof typeof GenreScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -37,3 +37,13 @@ export type user = Prisma.userModel
  * 
  */
 export type verification = Prisma.verificationModel
+/**
+ * Model Book
+ * 
+ */
+export type Book = Prisma.BookModel
+/**
+ * Model Genre
+ * 
+ */
+export type Genre = Prisma.GenreModel
