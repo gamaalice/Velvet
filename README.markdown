@@ -8,17 +8,7 @@ Velvet's purpose is to provide a simple and organized space where readers can ma
 
 ## Try Velvet
 
-Want to organize your own reading library? [Access the web version](YOUR_VERCEL_URL) and create your account to start tracking your books.
-
-## Main Links
-
-Web application:
-
-[access web version](YOUR_VERCEL_URL)
-
-GitHub repository:
-
-[Velvet](https://github.com/gamaalice/Velvet)
+Want to organize your own reading library? [Access the web version](https://velvet-eight-chi.vercel.app/sign-in) and create your account to start tracking your books.
 
 ## Project Context
 
@@ -256,3 +246,5 @@ LinkedIn: [Alice Gama](https://www.linkedin.com/in/alice-gama-75913022a/)
 Portfolio: [Portfolio Website](https://dev-portfolio-two-lovat-95.vercel.app/)
 
 GitHub: [gamaalice](https://github.com/gamaalice)
+
+Web: [Velvet](https://velvet-eight-chi.vercel.app/sign-in)
