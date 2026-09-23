@@ -83,7 +83,6 @@ This structure allows the library to work as both a book collection and a simple
 - Prisma
 - Better Auth
 - Lucide React
-- Vercel
 
 ## Authentication and Data Security
 
