@@ -147,6 +147,21 @@ This allows users to record as much or as little information as they want.
 
 Screenshots of the application:
 
+<table>
+  <tr>
+    <td><img src="public/readme/mainpage.png" width="400" /></td>
+    <td><img src="public/readme/estante.png" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme/card_1.png" width="400" /></td>
+    <td><img src="public/readme/card_2.png" width="400" /></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme/footer.png" width="400" /></td>
+    <td><img src="public/readme/singin.png" width="400" /></td>
+  </tr>
+</table>
+
 ## Repository Structure
 
 The repository contains the complete Velvet application source code.
